@@ -6,7 +6,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/frontoffice/app.css',
-                
+                'resources/js/lotteryBackground.js',
             ],
             refresh: true,
         }),

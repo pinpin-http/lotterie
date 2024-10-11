@@ -108,6 +108,16 @@ body {
     outline: 0 !important;
 }
 
+canvas#backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Met le canevas derrière tous les éléments */
+    pointer-events: none; /* Désactive les interactions pour que le canevas ne gêne pas le contenu */
+}
+
 hr {
     box-sizing: content-box;
     height: 0;

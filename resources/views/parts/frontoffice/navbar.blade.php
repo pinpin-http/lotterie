@@ -1,17 +1,17 @@
   <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-transparent navbar-theme-primary">
         <div class="container position-relative">
-            <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4" href="./index.html">
-                <img class="navbar-brand-dark" src="./assets/img/brand/dark.svg" alt="Logo light">
-                <img class="navbar-brand-light" src="./assets/img/brand/dark.svg" alt="Logo dark">
+            <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4" href="/">
+                <img class="navbar-brand-dark" src="./frontoffice/img/brand/dark.svg" alt="Logo light">
+                <img class="navbar-brand-light" src="./frontoffice/img/brand/dark.svg" alt="Logo dark">
             </a>
             <div class="navbar-collapse collapse" id="navbar_global">
                 <div class="navbar-collapse-header">
                     <div class="row">
                         <div class="col-6 collapse-brand">
-                            <a href="./index.html" class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
-                                <img src="./assets/img/brand/dark.svg" alt="Themesberg logo">
+                            <a href="/" class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
+                                <img src="./frontoffice/img/brand/dark.svg" alt="Themesberg logo">
                             </a>
-                        </div>
+                        </div>html/pages/sign-up.html
                         <div class="col-6 collapse-close">
                             <a href="#navbar_global" class="fas fa-times" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
                         </div>
@@ -26,9 +26,8 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="./html/pages/about.html">About</a></li>
                             <li><a class="dropdown-item" href="./html/pages/pricing.html">Pricing</a></li>
-                            <li><a class="dropdown-item" href="./html/pages/contact.html">Contact</a></li>
-                            <li><a class="dropdown-item" href="./html/pages/sign-in.html">Sign in</a></li>
-                            <li><a class="dropdown-item" href="./html/pages/sign-up.html">Sign up</a></li>
+                            <li><a class="dropdown-item" href="/login">Login</a></li>
+                            <li><a class="dropdown-item" href="/register">Register</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown mega-dropdown">
@@ -41,17 +40,14 @@
                                 <div class="col-lg-6 inside-bg d-none d-lg-block">
                                     <div class="justify-content-center bg-primary text-white">
                                         <div class="px-6 pb-5 pt-3">
-                                            <img src="./assets/img/megamenu-image.jpg" alt="Pixel Components">
+                                            <img src="./frontoffice/img/megamenu-image.jpg" alt="Pixel Components">
                                         </div>
                                         <div class="z-2 pb-4 text-center">
                                             <a href="./html/components/all.html"  class="btn btn-primary mb-2 mb-sm-0 mr-3 text-secondary">
                                                 <span class="mr-1"><span class="fas fa-th-large"></span></span>
                                                 All components
                                             </a>
-                                            <a href="https://themesberg.com/docs/neumorphism-ui/components/alerts" target="_blank" class="btn btn-primary mb-2 mb-sm-0">
-                                                <span class="mr-1"><span class="fas fa-book"></span></span>
-                                                Docs v1.0
-                                            </a>
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -125,8 +121,25 @@
                 </ul>
             </div>
             <div class="d-flex align-items-center">
-                <a href="https://themesberg.com/product/ui-kits/neumorphism-ui-pro" target="_blank" class="btn btn-primary text-secondary d-none d-md-inline-block mr-3"><i class="far fa-paper-plane mr-2"></i> Upgrade to PRO</a>
-                <a href="https://themesberg.com/docs/neumorphism-ui/getting-started/quick-start/" target="_blank" class="btn btn-primary"><i class="fas fa-book"></i> Docs v1.0</a>
+                
+                <!-- Bouton qui affiche "Logout" si l'utilisateur est connecté, et "Login" sinon -->
+                @auth
+                    <!-- Si l'utilisateur est connecté, afficher le bouton "Logout" -->
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="btn btn-primary mb-2 mb-sm-0">
+                            <span class="mr-1"><span class="fas fa-sign-out-alt"></span></span>
+                            Logout
+                        </button>
+                    </form>
+                @else
+                    <!-- Si l'utilisateur n'est pas connecté, afficher le bouton "Login" -->
+                    <a href="{{ route('login') }}" class="btn btn-primary mb-2 mb-sm-0">
+                        <span class="mr-1"><span class="fas fa-sign-in-alt"></span></span>
+                        Login
+                    </a>
+                @endauth
+                
                 <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

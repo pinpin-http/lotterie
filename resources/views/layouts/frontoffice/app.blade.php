@@ -36,7 +36,7 @@
     <meta property="og:site_name" content="Themesberg" />
     
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="120x120" href="./frontoffice/assets/img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./frontoffice/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./frontoffice/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./frontoffice/img/favicon/favicon-16x16.png">
     <link rel="manifest" href="./frontoffice/img/favicon/site.webmanifest">
@@ -49,7 +49,8 @@
     <!-- Pixel CSS -->
     @vite('resources/css/frontoffice/app.css')    
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
-    
+    @vite('resources/js/lotteryBackground.js')
+
 </head>
 <body>
     <div id="app">
