@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-8 text-center">
-                        <h1 class="display-2 mb-4">NéoLoto</h1>
+                        <h1 class="display-2 mb-4 text-neo">NéoLoto</h1>
                         <p class="lead mb-5">Une Nouvelle Façon de Jouer : Une expérience immersive et élégante</p>
                         <a class="btn btn-primary" href="/login"><span class="fas fa-dollar-sign mr-2"></span>Commencer maintenant &nbsp;<span class="fas fa-dollar-sign mr-2"></span> </a></div>
                 </div>
