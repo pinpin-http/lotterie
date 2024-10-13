@@ -93,83 +93,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
 }
 
-
-
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  :root {
-    --colorMain: #c0c0c0;
-    --brShadow: -6px 6px 15px rgba(0,0,0,0.5);
-    --tlShadow: 6px -6px 15px rgba(255,255,255,0.8);
-  }
-
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  :root {
-    --colorMain: #c0c0c0;
-    --brShadow: -6px 6px 15px rgba(0,0,0,0.5);
-    --tlShadow: 6px -6px 15px rgba(255,255,255,0.8);
-  }
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--colorMain);
-  }
-  
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--colorMain);
-  }
-  
-  .text {
-    color: var(--colorMain);
-    font-size: 8em;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    text-shadow: var(--brShadow), 
-                 var(--tlShadow);
-    position: relative;
-    
-    &::before, &::after {
-      position: absolute;
-      background: var(--colorMain);
-      content: '';
-      border-radius: 10%;
-      
-    }
-    
-      &::before {
-        left: 0;
-      width: 100px;
-      height: 100px;
-        top: -150px;
-        z-index: 10;
-        box-shadow: inset var(--brShadow),
-                  inset var(--tlShadow) ;
-        
-      }
-      &::after {
-        left: -50px;
-        width: 200px;
-        height: 200px;
-        top: -200px;
-        box-shadow: var(--brShadow),
-                  var(--tlShadow) ;
-      }
-  }
-  
 body {
     margin: 0;
     font-family: "Nunito Sans", sans-serif;
@@ -183,16 +106,6 @@ body {
 
 [tabindex="-1"]:focus {
     outline: 0 !important;
-}
-
-canvas#backgroundCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1; /* Met le canevas derrière tous les éléments */
-    pointer-events: none; /* Désactive les interactions pour que le canevas ne gêne pas le contenu */
 }
 
 hr {
@@ -222,43 +135,6 @@ abbr[data-original-title] {
     text-decoration-skip-ink: none;
 }
 
-.text-neo {
-    color: var(--colorMain);
-    font-size: 8em;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    text-shadow: var(--brShadow), 
-                 var(--tlShadow);
-    position: relative;
-    
-    &::before, &::after {
-      position: absolute;
-      background: var(--colorMain);
-      content: '';
-      border-radius: 10%;
-      
-    }
-    
-      &::before {
-        left: 0;
-      width: 100px;
-      height: 100px;
-        top: -150px;
-        z-index: 10;
-        box-shadow: inset var(--brShadow),
-                  inset var(--tlShadow) ;
-        
-      }
-      &::after {
-        left: -50px;
-        width: 200px;
-        height: 200px;
-        top: -200px;
-        box-shadow: var(--brShadow),
-                  var(--tlShadow) ;
-      }
-  }
 address {
     margin-bottom: 1rem;
     font-style: normal;
@@ -17030,7 +16906,7 @@ a.text-slack:hover, a.text-slack:focus {
   h3 {
         page-break-after: avoid;
     }
-  @page {
+  @    page {
         size: a3;
     }
 
