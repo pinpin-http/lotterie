@@ -69,71 +69,34 @@
             </div>
         </section>
         <!-- Section -->
-        <section class="section section-lg pt-0">
-            <div class="container">
+        <section class="section section-lg pt-0 ">
+            <div class="container  shadow-soft border-light p-4 bg-primary" >
                 <div class="row align-items-center justify-content-around">
+                    <!-- Colonne de l'image -->
                     <div class="col-md-6 col-xl-6 mb-5">
                         <div class="card bg-primary shadow-soft border-light organic-radius p-3">
-                            <img class="organic-radius img-fluid" src="./frontoffice/img/about-us-1.jpg" alt="modern desk">
+                            <img class="organic-radius img-fluid" src="./frontoffice/img/bingo.png" alt="modern desk">
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-5 text-center text-md-left">
-                        <h2 class="h1 mb-4">Design with us, Develop Anything.</h2>
-                        <p class="lead">Themesberg is an experienced and passionate group of designers, developers, project managers, writers and artists. Every client we work with becomes a part of the team. Together we face the challenges and celebrate the victories.</p>
-                        <p class="lead">Our small team is active in the creative community, endlessly interested in what’s next, and generally pleasant to be around.</p>
-                        <img src="./frontoffice/img/signature.svg" alt="signature" class="mt-4" width="150">
+                    
+                    <!-- Colonne du texte -->
+                    <div class="col-md-6 col-xl-6 mb-5 text-center text-md-left">
+                        <h2 class="h1 mb-4">Votre Chance, Notre Passion.</h2>
+                        <p class="lead">Nous croyons en l'excitation d'un jeu bien pensé, où la chance et le design se rencontrent. Notre plateforme réinvente la loterie pour offrir une expérience de jeu immersive, fluide, et élégante, à la hauteur de vos attentes.</p>
+                        <p class="lead">Chaque tirage est une nouvelle opportunité de rêver et de gagner, dans un environnement simple, raffiné et conçu pour votre confort.</p>
+                        <img src="./frontoffice/img/signature.png" alt="signature" class="mt-4" width="150">
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- End of section -->
-        <!-- Section -->
-        <section class="section section-lg pt-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-4 col-lg-4 text-center">
-                        <!-- Visit Box -->
-                        <div class="icon-box mb-4">
-                            <div class="icon icon-shape shadow-soft border border-light rounded-circle mb-4">
-                                <span class="far fa-smile-beam"></span>
-                            </div>
-                            <h3 class="h5">Team Members</h3>
-                            <span class="counter display-3 text-gray d-block">500</span>
-                        </div>
-                        <!-- End of Visit Box -->
-                    </div>
-                    <div class="col-12 col-sm-4 col-lg-4 text-center">
-                        <!-- Call Box -->
-                        <div class="icon-box mb-4">
-                            <div class="icon icon-shape shadow-soft border border-light rounded-circle mb-4">
-                                <span class="far fa-eye"></span>
-                            </div>
-                            <h3 class="h5">Projects Published</h3>
-                            <span class="counter display-3 text-gray d-block">2400</span>
-                        </div>
-                        <!-- End of Call Box -->
-                    </div>
-                    <div class="col-12 col-sm-4 col-lg-4 text-center">
-                        <!-- Email Box -->
-                        <div class="icon-box mb-4">
-                            <div class="icon icon-shape shadow-soft border border-light rounded-circle mb-4">
-                                <span class="fas fa-globe-europe"></span>
-                            </div>
-                            <h3 class="h5">Countries</h3>
-                            <span class="counter display-3 text-gray d-block">80</span>
-                        </div>
-                        <!-- End of Email Box -->
-                    </div>
-                </div>
-            </div>
-            
-        </section>
-        <!-- End of section -->
+       
         <!-- Section -->
         <section class="section section-lg pt-0">
             <div class="container">
                 <div class="row justify-content-center mb-5">
-                    <h2 class="h1">Our Team</h2>
+                    <h2 class="h1">Développeur</h2>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
