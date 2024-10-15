@@ -4,7 +4,7 @@
 <body>
     <main>
         <!-- Section -->
-        <section class="min-vh-100 d-flex bg-primary align-items-center">
+        <section class="min-vh-100 d-flex  align-items-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6 justify-content-center">
@@ -95,6 +95,16 @@
                                         <a href="{{ route('login') }}" class="font-weight-bold">Login here</a>
                                     </span>
                                 </div>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif  
+
                             </div>
                         </div>
                     </div>
