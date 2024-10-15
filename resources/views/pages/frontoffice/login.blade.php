@@ -4,7 +4,7 @@
 <body>
     <main>
         <!-- Section -->
-        <section class="min-vh-100 d-flex bg-primary align-items-center">
+        <section class="min-vh-100 d-flex  align-items-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6 justify-content-center">
@@ -19,7 +19,7 @@
 
                                     <!-- Form Group pour l'email -->
                                     <div class="form-group">
-                                        <label for="email">Your email</label>
+                                        <label for="email">Email</label>
                                         <div class="input-group mb-4">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><span class="fas fa-envelope"></span></span>
@@ -30,7 +30,7 @@
 
                                     <!-- Form Group pour le mot de passe -->
                                     <div class="form-group">
-                                        <label for="password">Password</label>
+                                        <label for="password">Mot de passe</label>
                                         <div class="input-group mb-4">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
@@ -44,39 +44,33 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" name="remember" id="remember">
                                             <label class="form-check-label" for="remember">
-                                                Remember me
+                                                Se souvenir de moi 
                                             </label>
                                         </div>
-                                        <div><a href="{{ route('password.request') }}" class="small text-right">Lost password?</a></div>
                                     </div>
 
                                     <!-- Bouton de soumission -->
                                     <button type="submit" class="btn btn-block btn-primary">Sign in</button>
                                 </form>
 
-                                <!-- Options de connexion via les réseaux sociaux -->
-                                <div class="mt-3 mb-4 text-center">
-                                    <span class="font-weight-normal">or login with</span>
-                                </div>
-                                <div class="btn-wrapper my-4 text-center">
-                                    <button class="btn btn-primary btn-icon-only text-facebook mr-2" type="button" aria-label="facebook button" title="facebook button">
-                                        <span aria-hidden="true" class="fab fa-facebook-f"></span>
-                                    </button>
-                                    <button class="btn btn-primary btn-icon-only text-twitter mr-2" type="button" aria-label="twitter button" title="twitter button">
-                                        <span aria-hidden="true" class="fab fa-twitter"></span>
-                                    </button>
-                                    <button class="btn btn-primary btn-icon-only text-facebook" type="button" aria-label="github button" title="github button">
-                                        <span aria-hidden="true" class="fab fa-github"></span>
-                                    </button>
-                                </div>
+                             
 
                                 <!-- Lien vers la page d'inscription -->
                                 <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
                                     <span class="font-weight-normal">
-                                        Not registered?
-                                        <a href="{{ route('register') }}" class="font-weight-bold">Create account</a>
+                                        Pas encore des nôtres?
+                                        <a href="{{ route('register') }}" class="font-weight-bold">Créez un compte maintenant !</a>
                                     </span>
                                 </div>
+                                @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif  
                             </div>
                         </div>
                     </div>

@@ -6171,10 +6171,15 @@ input[type="button"].btn-block {
     padding-top: 0.0625rem;
     padding-bottom: 0.0625rem;
     margin-right: 1rem;
-    font-size: 1.25rem;
     line-height: inherit;
     white-space: nowrap;
 }
+
+.navbar-brand img {
+    max-width: 100px; /* Ajustez cette valeur en fonction de la taille souhaitée */
+    height: auto; /* Maintient les proportions de l'image */
+}
+
 
 .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none;

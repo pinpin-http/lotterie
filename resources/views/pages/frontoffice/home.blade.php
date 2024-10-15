@@ -105,8 +105,8 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <!-- Profile Card -->
                         <div class="card bg-primary shadow-soft border-light text-center py-4 mb-5">
-                            <div class="profile-image shadow-inset border border-light bg-primary rounded-circle p-3 mx-auto">
-                                <img src="./frontoffice/img/team/profile.png" class="card-img-top shadow-soft p-2 border border-light rounded-circle" alt="pinpin">
+                            <div class="profile-image shadow-inset  border border-light bg-primary rounded-circle p-3 mx-auto">
+                                <img src="./frontoffice/img/brand/pinpin_minimalist.png" class="card-img-top shadow-soft p-2 border border-light rounded-circle" alt="pinpin">
                             </div>
                             <div class="card-body">
                                 <h3 class="h5 mb-2">Pinpin</h3>
