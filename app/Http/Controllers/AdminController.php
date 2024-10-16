@@ -167,10 +167,16 @@ class AdminController extends Controller
     //distribution des prix ect
     public function distributePrizes(Draw $draw)
     {
+        // Vérifier si des prix ont déjà été distribués pour ce tirage
+        $existingPrizes = DB::table('prizes')->where('draw_id', $draw->id)->exists();
+
+        if ($existingPrizes) {
+            return redirect()->route('admin.create_draw')->withErrors('Les prix ont déjà été distribués pour ce tirage.');
+        }
+
         $jackpot = $draw->jackpot;
         $prizeDistribution = [40, 20, 12, 7, 6, 5, 4, 3, 2, 1]; // Pourcentage pour les 10 premiers
 
-        // Récupérer les 10 meilleurs tickets classés
         $winners = $draw->tickets()
             ->orderByDesc('proximity_score')
             ->orderByDesc('star_score')
@@ -181,10 +187,9 @@ class AdminController extends Controller
         try {
             foreach ($winners as $index => $winner) {
                 $rank = $index + 1;
-                $percentage = $prizeDistribution[$index] ?? 0; // Pourcentage basé sur le classement
-                $amount = ($jackpot * $percentage) / 100; // Calcul du montant du prix
+                $percentage = $prizeDistribution[$index] ?? 0;
+                $amount = ($jackpot * $percentage) / 100;
 
-                // Enregistrer les informations dans la table prizes
                 DB::table('prizes')->insert([
                     'draw_id' => $draw->id,
                     'user_id' => $winner->user_id,
@@ -202,7 +207,20 @@ class AdminController extends Controller
             DB::rollBack();
             return redirect()->back()->withErrors("Erreur lors de la distribution des prix : " . $e->getMessage());
         }
-}
+    }
+
+    //visualiser les ranks
+    public function viewRanking()
+    {
+        // Récupérer tous les tirages terminés avec les gagnants triés par rang
+        $draws = Draw::where('status', 'closed')
+            ->with(['prizes' => function ($query) {
+                $query->orderBy('rank', 'asc');
+            }])->get();
+
+        return view('admin.ranking', compact('draws'));
+    }
+
 
 
 }

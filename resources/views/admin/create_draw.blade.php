@@ -83,39 +83,42 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($draws as $draw)
-                                        <tr>
-                                            <td>{{ $draw->id }}</td>
-                                            <td>{{ $draw->date }}</td>
-                                            <td>{{ number_format($draw->jackpot, 2) }} €</td>
-                                            <td>{{ implode(', ', json_decode($draw->numbers)) }}</td>
-                                            <td>{{ implode(', ', json_decode($draw->stars)) }}</td>
-                                            <td>{{ $draw->tickets_count }}</td>
-                                            <td>
-                                                @if ($draw->status === 'open')
-                                                    <span class="badge badge-success">Ouvert</span>
-                                                @else
-                                                    <span class="badge badge-secondary">Terminé</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                @if ($draw->status === 'open' && $draw->tickets_count >= 10)
-                                                    <form action="{{ route('admin.launch_draw', $draw) }}" method="POST" onsubmit="return confirm('Confirmez-vous le lancement de ce tirage ?');">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-sm btn-danger">Lancer le Tirage</button>
-                                                    </form>
-                                                @elseif($draw->tickets_count < 10)
-                                                    <button class="btn btn-sm btn-warning" disabled>
-                                                        Attente de Participants, {{ 10 - $draw->tickets_count }} tickets avant lancement
-                                                    </button>
-                                                @else
-                                                    <form action="{{ route('admin.distribute_prizes', $draw) }}" method="POST" onsubmit="return confirm('Confirmez-vous la distribution des prix pour ce tirage ?');">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-sm btn-success">Distribuer les Prix</button>
-                                                    </form>
-                                                @endif
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                    <tr>
+                                        <td>{{ $draw->id }}</td>
+                                        <td>{{ $draw->date }}</td>
+                                        <td>{{ number_format($draw->jackpot, 2) }} €</td>
+                                        <td>{{ implode(', ', json_decode($draw->numbers)) }}</td>
+                                        <td>{{ implode(', ', json_decode($draw->stars)) }}</td>
+                                        <td>{{ $draw->tickets_count }}</td>
+                                        <td>
+                                            @if ($draw->status === 'open')
+                                                <span class="badge badge-success">Ouvert</span>
+                                            @else
+                                                <span class="badge badge-secondary">Terminé</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($draw->status === 'open' && $draw->tickets_count >= 10)
+                                                <form action="{{ route('admin.launch_draw', $draw) }}" method="POST" onsubmit="return confirm('Confirmez-vous le lancement de ce tirage ?');">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-sm btn-danger">Lancer le Tirage</button>
+                                                </form>
+                                            @elseif($draw->tickets_count < 10)
+                                                <button class="btn btn-sm btn-warning" disabled>
+                                                    Attente de Participants, {{ 10 - $draw->tickets_count }} tickets avant lancement
+                                                </button>
+                                            @elseif(DB::table('prizes')->where('draw_id', $draw->id)->exists())
+                                                <button class="btn btn-sm btn-secondary" disabled>Prix déjà distribués</button>
+                                            @else
+                                                <form action="{{ route('admin.distribute_prizes', $draw) }}" method="POST" onsubmit="return confirm('Confirmez-vous la distribution des prix pour ce tirage ?');">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-sm btn-success">Distribuer les Prix</button>
+                                                </form>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+
                                 </tbody>
                             </table>
                         </div>

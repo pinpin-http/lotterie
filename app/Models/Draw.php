@@ -16,4 +16,9 @@ class Draw extends Model
     {
         return $this->hasMany(Ticket::class);
     }
+    public function prizes()
+    {
+        return $this->hasMany(Prize::class);
+    }
+
 }

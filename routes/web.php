@@ -15,6 +15,12 @@ Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 's
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegisterForm'])->name('register');
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegisterForm'])->name('register');
 
+
+//voir le rankings des differents tirage
+Route::get('/admin/ranking', [AdminController::class, 'viewRanking'])->name('admin.ranking');
+
+
+
 //routes reservé au groupe admin
 Route::middleware(['auth', 'role:admin'])->group(function () {
     //routes pour afficher traiter et lancer un tirage
