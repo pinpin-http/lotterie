@@ -40,8 +40,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 //routes reservé au groupe user normal
 Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/participate', [UserController::class, 'participate'])->name('user.participate');
-});
+    Route::get('/user/ticketing', [UserController::class, 'showTicketingPage'])->name('user.ticketing');
+    Route::post('/user/buy-ticket/{draw}', [UserController::class, 'buyTicket'])->name('user.buy_ticket');
+    Route::get('/user/participations', [UserController::class, 'showParticipations'])->name('user.participations');
+
+    });
 
 
 

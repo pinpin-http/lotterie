@@ -31,7 +31,9 @@
                         @if(Auth::user()->role === 'admin')
                             <a class="nav-link" href="{{ route('admin.create_draw') }}">Dashboard Admin</a>
                         @elseif(Auth::user()->role === 'user')
-                            <a class="nav-link" href="{{ route('user.participate') }}">Participer</a>
+                            <a class="nav-link" href="{{ route('user.ticketing') }}">Acheter un ticket</a>
+                            <a class="nav-link" href="{{ route('user.participations') }}">Voir mes participations</a>
+
                         @endif
                     @endauth
 
