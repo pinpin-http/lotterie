@@ -10,7 +10,7 @@
                     <div class="col-12 col-md-8 col-lg-6 justify-content-center">
                         <div class="card bg-primary shadow-soft border-light p-4">
                             <div class="card-header text-center pb-0">
-                                <h2 class="mb-0 h5">Create Account</h2>                               
+                                <h2 class="mb-0 h5">Create Account</h2>
                             </div>
                             <div class="card-body">
                                 <!-- Définissez l'action du formulaire vers la route d'inscription -->
@@ -63,7 +63,7 @@
 
                                 <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
                                     <span class="font-weight-normal">
-                                        Ah mais vous avez deja un compte? 
+                                        Ah mais vous avez deja un compte?
                                         <a href="{{ route('login') }}" class="font-weight-bold">Ca se passe ici alors !</a>
                                     </span>
                                 </div>
@@ -75,7 +75,10 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                @endif  
+                                @endif
+                                <button type="submit" class="btn btn-block btn-primary">S'inscrire</button>
+
+                                </form>
 
                             </div>
                         </div>

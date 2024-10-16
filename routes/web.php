@@ -1,8 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 
 //routes general et d'auth
 
@@ -17,7 +20,7 @@ Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 's
 
 
 //voir le rankings des differents tirage
-Route::get('/admin/ranking', [AdminController::class, 'viewRanking'])->name('admin.ranking');
+Route::get('/ranking', [HomeController::class, 'viewRanking'])->name('ranking');
 
 
 

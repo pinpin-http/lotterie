@@ -209,17 +209,7 @@ class AdminController extends Controller
         }
     }
 
-    //visualiser les ranks
-    public function viewRanking()
-    {
-        // Récupérer tous les tirages terminés avec les gagnants triés par rang
-        $draws = Draw::where('status', 'closed')
-            ->with(['prizes' => function ($query) {
-                $query->orderBy('rank', 'asc');
-            }])->get();
 
-        return view('admin.ranking', compact('draws'));
-    }
 
 
 

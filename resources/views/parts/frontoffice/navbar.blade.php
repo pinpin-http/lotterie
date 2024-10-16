@@ -17,11 +17,13 @@
                     </div>
                 </div>
 
-                    <a href="#" class="nav-link" data-toggle="dropdown" >
+                    <a href="/" class="nav-link" data-toggle="dropdown" >
                         <span class="nav-link-inner-text">À propos</span>
 
                     </a>
-
+                    <a href="/ranking" class="nav-link" data-toggle="dropdown">
+                        <span class="nav-link-inner-text">Classements</span>
+                    </a>
 
                  <!-- Affichage conditionnel de certaines sections -->
 
