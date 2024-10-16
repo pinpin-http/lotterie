@@ -1,15 +1,14 @@
   <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-transparent navbar-theme-primary">
         <div class="container position-relative">
             <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4" href="/">
-                <img class="navbar-brand-dark" src="./frontoffice/img/brand/pinpin_minimalist.png" alt="Logo light">
-                <img class="navbar-brand-light" src="./frontoffice/img/brand/pinpin_minimalist.png" alt="Logo dark">
+                <img class="navbar-brand-light" src="{{ asset('frontoffice/img/brand/pinpin_minimalist.png') }}" alt="Logo dark">
             </a>
             <div class="navbar-collapse collapse" id="navbar_global">
                 <div class="navbar-collapse-header">
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="/" class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
-                                <img src="./frontoffice/img/brand/pinpin_minimalist.png" alt="logo">
+                                <img src="{{ asset('frontoffice/img/brand/pinpin_minimalist.png') }}" alt="Logo">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -17,13 +16,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                     <a href="#" class="nav-link" data-toggle="dropdown" >
                         <span class="nav-link-inner-text">À propos</span>
-                  
+
                     </a>
-                    
-                        
+
+
                  <!-- Affichage conditionnel de certaines sections -->
 
                     @auth
@@ -33,10 +32,10 @@
                             <a class="nav-link" href="{{ route('user.participate') }}">Participer</a>
                         @endif
                     @endauth
-                   
+
             </div>
             <div class="d-flex align-items-center">
-                
+
                 <!-- Bouton qui affiche "Logout" si l'utilisateur est connecté, et "Login" sinon -->
                 @auth
                     <!-- Si l'utilisateur est connecté, afficher le bouton "Logout" -->
@@ -54,8 +53,8 @@
                         Connexion/Inscription
                     </a>
                 @endauth
-                
-                
+
+
                 <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -1,7 +1,7 @@
 @extends('layouts.frontoffice.app')
 
 @section('content')
-     
+
         <!-- Hero -->
         <div class="section section-header pb-7">
             <div class="container">
@@ -11,10 +11,10 @@
                         <p class="lead mb-5">Une Nouvelle Façon de Jouer : Une expérience immersive et élégante</p>
                         <a class="btn btn-primary" href="/login"><span class="fas fa-dollar-sign mr-2"></span>Commencer maintenant &nbsp;<span class="fas fa-dollar-sign mr-2"></span> </a></div>
                 </div>
-                
-            </div>        
+
+            </div>
         </div>
-        
+
         <!-- End of Hero section -->
         <section class="section section-lg pt-0">
             <div class="container">
@@ -57,7 +57,7 @@
                                         <h2 class="h4 mr-2">
                                             Des Opportunités de Gain à Chaque Tirage
                                         </h2>
-                                        
+
                                         <!-- Text -->
                                         <p class="mb-0">Sur notre plateforme, chaque tirage est une nouvelle chance de remporter des récompenses. Nous avons repensé l’expérience de gain pour offrir des options claires et accessibles à tous les joueurs.</p>
                                     </div>
@@ -78,7 +78,7 @@
                             <img class="organic-radius img-fluid" src="./frontoffice/img/bingo.png" alt="modern desk">
                         </div>
                     </div>
-                    
+
                     <!-- Colonne du texte -->
                     <div class="col-md-6 col-xl-6 mb-5 text-center text-md-left">
                         <h2 class="h1 mb-4">Votre Chance, Notre Passion.</h2>
@@ -91,7 +91,7 @@
         </section>
 
         <!-- End of section -->
-       
+
         <!-- Section -->
         <section class="section section-lg pt-0">
             <div class="container">

@@ -12,19 +12,8 @@ camera.position.z = 0;
 
 // Chemins des images de boules de loterie
 
+const lotteryBallImages = window.lotteryBallImages || [];
 
-const lotteryBallImages = [
-    './frontoffice/img/boules/boule1.png',  // Remplacez par le chemin de vos images
-    './frontoffice/img/boules/boule2.png',
-    './frontoffice/img/boules/boule3.png',
-    './frontoffice/img/boules/boule4.png',
-    './frontoffice/img/boules/boule5.png',
-    './frontoffice/img/boules/boule6.png',
-    './frontoffice/img/boules/boule7.png',
-    './frontoffice/img/boules/boule8.png',
-
-
-];
 // Fonction pour créer un sprite de boule de loterie avec une image
 function createLotteryBall() {
     // Charge une image aléatoire pour la boule

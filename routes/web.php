@@ -17,9 +17,15 @@ Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 's
 
 //routes reservé au groupe admin
 Route::middleware(['auth', 'role:admin'])->group(function () {
+    //routes pour afficher traiter et lancer un tirage
     Route::get('/admin/create-draw', [AdminController::class, 'createDrawForm'])->name('admin.create_draw');
     Route::post('/admin/store-draw', [AdminController::class, 'storeDraw'])->name('admin.store_draw');
     Route::post('/admin/launch-draw/{draw}', [AdminController::class, 'launchDraw'])->name('admin.launch_draw');
+    //partage des prix
+    Route::post('/admin/distribute-prizes/{draw}', [AdminController::class, 'distributePrizes'])->name('admin.distribute_prizes');
+
+    //route de cheaters
+    Route::post('/admin/generate-fake-participants', [AdminController::class, 'generateFakeParticipants'])->name('admin.generate_fake_participants');
 });
 
 
